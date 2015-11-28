@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128110921) do
+ActiveRecord::Schema.define(version: 20151128121204) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +31,15 @@ ActiveRecord::Schema.define(version: 20151128110921) do
     t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "year"
+    t.string   "album_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "artist_id"
   end
 
   create_table "users", force: :cascade do |t|

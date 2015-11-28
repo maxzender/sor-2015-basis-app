@@ -6,14 +6,8 @@
 </div>
 
 <div class="page-header">
-  <h2>Latest News</h1>
+  <h2>
+  	<%= link_to "Locations", locations_path%>
+  </h2>
+  
 </div>
-
-<% @posts.each do |post| %>
-  <article>
-    <h3><%= link_to post.title, post_path(post) %> <small><%= l(post.created_at, format: :short) %></small></h3>
-    <p>
-      <%= simple_format(truncate(post.body, length: 250)) %>
-    </p>
-  </article>
-<% end %>
