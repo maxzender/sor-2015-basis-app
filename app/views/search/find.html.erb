@@ -2,12 +2,32 @@
 	<h1>Search Results</h1>
 </div>
 
+
+<h2>Artists</h2>
+
 <ul>
-<% @results.each do |result| %>
-    <li>
-      <h3>
-        <%=result.name%>
-      </h3>
-    </li>
-<% end %>	
+	<% @artists.each do |artist| %>
+		<li>
+			<%= artist.name %>
+		</li>
+	<%end%>
+</ul>
+
+<h2>Titles</h2>
+<ul>
+	<% @titles.each do |title| %>
+		<li>
+			<%= title.title %>
+		</li>
+	<%end%>
+</ul>
+
+<h2>Locations</h2>
+
+<ul>
+	<% @locations.each do |location| %>
+		<li>
+			<%= location.name %>
+		</li>
+	<%end%>
 </ul>
