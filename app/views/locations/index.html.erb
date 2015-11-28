@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2>Locations</h2>
+</div>
+
+<ul>
+<% @locations.each do |location| %>
+    <li>
+      <h3>
+        <%= link_to location.name, location_path(location) %>
+        <small><%= location.city %></small>
+      </h3>
+    </li>
+<% end %>
+</ul>

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show]
 
+  resources :locations
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
