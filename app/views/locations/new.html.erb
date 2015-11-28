@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h2>Neue Location</h2>
+  <%= form_for @location do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Speichern", class: "btn btn-default" %>
+    </div>
+  <% end %>
+</div>
