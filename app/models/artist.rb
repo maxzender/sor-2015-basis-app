@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
 
-  # has_many :titles
+  has_many :titles
 
 end
