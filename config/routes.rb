@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   
   resources :locations
+  
+  get 'search' => 'search#find'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
