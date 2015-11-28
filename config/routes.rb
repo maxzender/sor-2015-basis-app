@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show]
 
-  resources :artists do
-    resources :titles
-  end
-  
+#  resources :artists do
+#    resources :titles
+#  end
+
+  resources :artists
+
   resources :locations
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
