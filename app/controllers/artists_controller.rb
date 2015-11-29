@@ -4,8 +4,9 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
-  def show
+  def show # --> show-View
     @artist = Artist.find(params[:id])
+    @title = Title.new
   end
 
   def new
@@ -20,5 +21,4 @@ class ArtistsController < ApplicationController
       render 'new'
     end
   end
-
 end
