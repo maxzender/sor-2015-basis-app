@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :locations
 
+  put 'update_current_track/:id' => 'activities#update_current_track', as: :update_current_track
+  
   resources :concerts
   
   get 'search' => 'search#find'
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#index'
+  root 'activities#stream'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

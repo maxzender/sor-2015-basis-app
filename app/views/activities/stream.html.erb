@@ -1,0 +1,6 @@
+<h1> Who is listening to what? </h1>
+<ul>
+	<% @users.each do |f| %>
+		<li> <%= "#{f.name} is listening to #{f.current_track.title}"%> </li>
+	<% end %>
+</ul>

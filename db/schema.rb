@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129094356) do
+ActiveRecord::Schema.define(version: 20151129100829) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20151129094356) do
     t.string   "name",                             null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "current_track_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
