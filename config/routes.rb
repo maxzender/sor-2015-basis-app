@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   put 'update_current_track/:id' => 'activities#update_current_track', as: :update_current_track
   
+  resources :concerts
+  
   get 'search' => 'search#find'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

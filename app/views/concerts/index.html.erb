@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h2>Concerts</h2>
+</div>
+
+<ul>
+  <% @concerts.each do |concert| %>
+      <li>
+        <%= "#{concert.artist.name}, #{concert.date.to_formatted_s(:short)}, #{concert.location.name}" %>
+      </li>
+  <% end %>
+</ul>
