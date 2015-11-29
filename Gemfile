@@ -40,6 +40,8 @@ gem 'devise'
 # Use rails_admin for some basic data administration
 gem 'rails_admin'
 
+gem 'bootstrap-datepicker-rails'
+
 group :production do
   gem 'rails_12factor'
   gem 'pg'

@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
 
   def index
-    @concerts = Concert.all
+    @concerts = Concert.order(:date)
   end
 
   def new
@@ -10,4 +10,12 @@ class ConcertsController < ApplicationController
     @locations = Location.all
   end
 
+  def create
+    @concert = Concert.new(params[:concert])
+    if @concert.save
+      redirect_to action: 'index'
+    else
+      render 'new'
+    end
+  end
 end
