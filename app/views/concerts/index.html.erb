@@ -5,7 +5,7 @@
 <ul>
   <% @concerts.each do |concert| %>
       <li>
-        <% if (concert.artist && concert.date && concert.location) %>
+        <% if concert.artist && concert.date && concert.location %>
           <%= "#{concert.artist.name}, #{concert.date.to_date.to_formatted_s(:rfc822)}, #{concert.location.name}" %>
         <% end %>
       </li>
