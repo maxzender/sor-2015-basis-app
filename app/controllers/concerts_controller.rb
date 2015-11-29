@@ -4,4 +4,10 @@ class ConcertsController < ApplicationController
     @concerts = Concert.all
   end
 
+  def new
+    @concert = Concert.new
+    @artists = Artist.all
+    @locations = Location.all
+  end
+
 end

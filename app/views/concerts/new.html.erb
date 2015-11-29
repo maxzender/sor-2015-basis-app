@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h2>New Concert</h2>
+  <%= form_for @concert do |f| %>
+      <div class="form-group">
+        <%= f.label :artist %>
+        <%= select_tag(:artist_id, map_to_select_options(:name, @artists), class: "form-control") %>
+      </div>
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= select_tag(:location_id, map_to_select_options(:name, @locations), class: "form-control") %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Speichern", class: "btn btn-default" %>
+      </div>
+  <% end %>
+</div>
