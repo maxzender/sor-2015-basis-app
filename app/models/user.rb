@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   belongs_to :current_track, class_name: "Title"
+
+  scope :listening, -> {where "current_track_id IS NOT NULL"}
 end
