@@ -17,6 +17,7 @@
   <% end %>
 </ul>
 
+<h4>Add Title</h4>
 <%= form_tag artist_titles_path(artist_id: @artist.id) do %>
     <div class="form-group">
       <%= label_tag :title_title, "Title" %>
@@ -34,3 +35,11 @@
       <%= submit_tag "Save Title", class: "btn btn-default" %>
     </div>
 <% end %>
+
+<ul>
+  <% @artist.concerts.each do |concert| %>
+      <li>
+        <%= "#{concert.date.to_date.to_formatted_s(:rfc822)}, #{concert.location.name}" %>
+      </li>
+  <% end %>
+</ul>
