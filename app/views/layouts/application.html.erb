@@ -15,7 +15,11 @@
       </div>
 
       <div class="collapse navbar-collapse">
-        <p class="navbar-text navbar-right">
+	      <ul class="nav navbar-nav">
+		      <li class="<%= active_class(artists_path)%>"> <%= link_to "Artists", artists_path%></li>
+		      <li class="<%=active_class(locations_path)%>"> <%= link_to "Locations", locations_path%></li>
+	      </ul>
+	      <p class="navbar-text navbar-right">
           <% if user_signed_in? %>
             Angemeldet als <%= link_to current_user.name, edit_user_registration_path(id: current_user.id) %>
             (<%= link_to "abmelden", destroy_user_session_path, method: :delete %>)

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   resources :locations
+
+  put 'update_current_track/:id' => 'activities#update_current_track', as: :update_current_track
   
   get 'search' => 'search#find'
 

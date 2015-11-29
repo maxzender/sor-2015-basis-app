@@ -5,7 +5,14 @@
 <ul>
   <% @artist.titles.each do |title| %>
       <li>
-        <%= title.title %><small> (<%= "#{title.year}, #{title.album_name}" %>)</small>
+      <%= title.title %><small> (<%= "#{title.year}, #{title.album_name}" %>)</small>
+      <% if current_user %>
+	 <% if current_user.current_track == title %>
+	   <span class="glyphicon glyphicon-volume-up"> </span>
+	 <% else %>
+	   <%= link_to "Listening to this track", update_current_track_path(title.id), method: :put%>
+	 <% end %>
+      <% end %>
       </li>
   <% end %>
 </ul>
