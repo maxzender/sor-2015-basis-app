@@ -4,3 +4,11 @@
     <small><%= @location.city %></small>
   </h2>
 </div>
+
+<ul>
+  <% @location.concerts.each do |concert| %>
+      <li>
+        <%= "#{concert.artist.name}, #{concert.date.to_date.to_formatted_s(:rfc822)}, #{concert.location.name}" %>
+      </li>
+  <% end %>
+</ul>
