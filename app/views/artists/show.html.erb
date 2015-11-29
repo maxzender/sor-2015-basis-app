@@ -1,3 +1,29 @@
 <div class="page-header">
   <h2><%= @artist.name %></h2>
 </div>
+
+<ul>
+  <% @artist.titles.each do |title| %>
+      <li>
+        <%= title.title %><small> (<%= "#{title.year}, #{title.album_name}" %>)</small>
+      </li>
+  <% end %>
+</ul>
+
+<%= form_tag artist_titles_path(artist_id: @artist.id) do %>
+    <div class="form-group">
+      <%= label_tag :title_title, "Title" %>
+      <%= text_field :title, :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :title_year, "Year" %>
+      <%= text_field :title, :year, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :title_album_name, "Album" %>
+      <%= text_field :title, :album_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag "Save Title", class: "btn btn-default" %>
+    </div>
+<% end %>
